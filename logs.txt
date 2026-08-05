@@ -1,4 +1,3 @@
-(marl-sec-env) mushahid@fedora:/mnt/Stuff/marl_sec$ python run_pipeline.py
 
 ============================================================
   CARTPOLE (PPO)
@@ -30,64 +29,64 @@
   t=51200, mean_reward=154.5, policy_loss=-0.0020, entropy=0.5946
   Training done. Mean reward: 165.1
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1785909692.694014   17424 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-I0000 00:00:1785909692.727194   17424 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+I0000 00:00:1785912584.756128   24449 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1785912584.788400   24449 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1785909693.666023   17424 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-I0000 00:00:1785909693.666272   17424 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1785912585.685023   24449 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1785912585.685240   24449 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
 /home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/keras/src/layers/core/dense.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
   super().__init__(activity_regularizer=activity_regularizer, **kwargs)
-W0000 00:00:1785909693.769540   17424 gpu_device.cc:2365] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+W0000 00:00:1785912585.783489   24449 gpu_device.cc:2365] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
 Skipping registering GPU devices...
-Saved artifact at '/tmp/tmpqwvw8hds'. The following endpoints are available:
+Saved artifact at '/tmp/tmp6z3vtb_9'. The following endpoints are available:
 
 * Endpoint 'serve'
   args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 4), dtype=tf.float32, name='keras_tensor')
 Output Type:
   TensorSpec(shape=(None, 2), dtype=tf.float32, name=None)
 Captures:
-  139823591969360: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591970512: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591971472: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591965712: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591971280: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591970128: TensorSpec(shape=(), dtype=tf.resource, name=None)
-W0000 00:00:1785909693.971529   17424 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
-W0000 00:00:1785909693.971541   17424 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
-I0000 00:00:1785909693.971767   17424 reader.cc:83] Reading SavedModel from: /tmp/tmpqwvw8hds
-I0000 00:00:1785909693.972023   17424 reader.cc:52] Reading meta graph with tags { serve }
-I0000 00:00:1785909693.972027   17424 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpqwvw8hds
-I0000 00:00:1785909693.974347   17424 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
-I0000 00:00:1785909693.974681   17424 loader.cc:236] Restoring SavedModel bundle.
-I0000 00:00:1785909693.990056   17424 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpqwvw8hds
-I0000 00:00:1785909693.994130   17424 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 22366 microseconds.
-I0000 00:00:1785909693.999522   17424 dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-Saved artifact at '/tmp/tmp99lmuycx'. The following endpoints are available:
+  140685577867472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577868624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577869584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577863824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577869392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577868240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+W0000 00:00:1785912585.988398   24449 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1785912585.988412   24449 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1785912585.988642   24449 reader.cc:83] Reading SavedModel from: /tmp/tmp6z3vtb_9
+I0000 00:00:1785912585.988875   24449 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1785912585.988881   24449 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmp6z3vtb_9
+I0000 00:00:1785912585.991300   24449 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+I0000 00:00:1785912585.991642   24449 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1785912586.007739   24449 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmp6z3vtb_9
+I0000 00:00:1785912586.012032   24449 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 23395 microseconds.
+I0000 00:00:1785912586.017532   24449 dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+Saved artifact at '/tmp/tmpwiuftk0w'. The following endpoints are available:
 
 * Endpoint 'serve'
   args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 4), dtype=tf.float32, name='keras_tensor')
 Output Type:
   TensorSpec(shape=(None, 2), dtype=tf.float32, name=None)
 Captures:
-  139823591969360: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591970512: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591971472: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591965712: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591971280: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823591970128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577867472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577868624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577869584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577863824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577869392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685577868240: TensorSpec(shape=(), dtype=tf.resource, name=None)
 /home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
   warnings.warn(
-W0000 00:00:1785909694.144668   17424 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
-W0000 00:00:1785909694.144677   17424 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
-I0000 00:00:1785909694.144760   17424 reader.cc:83] Reading SavedModel from: /tmp/tmp99lmuycx
-I0000 00:00:1785909694.145009   17424 reader.cc:52] Reading meta graph with tags { serve }
-I0000 00:00:1785909694.145013   17424 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmp99lmuycx
-I0000 00:00:1785909694.146942   17424 loader.cc:236] Restoring SavedModel bundle.
-I0000 00:00:1785909694.160635   17424 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmp99lmuycx
-I0000 00:00:1785909694.164684   17424 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 19928 microseconds.
+W0000 00:00:1785912586.166915   24449 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1785912586.166926   24449 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1785912586.167013   24449 reader.cc:83] Reading SavedModel from: /tmp/tmpwiuftk0w
+I0000 00:00:1785912586.167257   24449 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1785912586.167261   24449 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpwiuftk0w
+I0000 00:00:1785912586.169275   24449 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1785912586.183439   24449 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpwiuftk0w
+I0000 00:00:1785912586.187615   24449 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 20605 microseconds.
 fully_quantize: 0, inference_type: 6, input_inference_type: FLOAT32, output_inference_type: FLOAT32
-W0000 00:00:1785909694.201130   17424 flatbuffer_export.cc:3851] Skipping runtime version metadata in the model. This will be generated by the exporter.
+W0000 00:00:1785912586.223485   24449 flatbuffer_export.cc:3851] Skipping runtime version metadata in the model. This will be generated by the exporter.
     Exported: FP32=7100B, INT8=5680B
 /home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
     TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
@@ -211,52 +210,52 @@ INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
   Analyzing grid_nav_agent_0...
 /home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/keras/src/layers/core/dense.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
   super().__init__(activity_regularizer=activity_regularizer, **kwargs)
-Saved artifact at '/tmp/tmpg3sbvcxx'. The following endpoints are available:
+Saved artifact at '/tmp/tmpzcsuf8nu'. The following endpoints are available:
 
 * Endpoint 'serve'
   args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 9), dtype=tf.float32, name='keras_tensor_7')
 Output Type:
   TensorSpec(shape=(None, 5), dtype=tf.float32, name=None)
 Captures:
-  139823534260880: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534261456: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534261648: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534260304: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534267984: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534268752: TensorSpec(shape=(), dtype=tf.resource, name=None)
-W0000 00:00:1785909744.418416   17424 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
-W0000 00:00:1785909744.418429   17424 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
-I0000 00:00:1785909744.418527   17424 reader.cc:83] Reading SavedModel from: /tmp/tmpg3sbvcxx
-I0000 00:00:1785909744.418801   17424 reader.cc:52] Reading meta graph with tags { serve }
-I0000 00:00:1785909744.418808   17424 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpg3sbvcxx
-I0000 00:00:1785909744.421056   17424 loader.cc:236] Restoring SavedModel bundle.
-I0000 00:00:1785909744.435617   17424 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpg3sbvcxx
-I0000 00:00:1785909744.439930   17424 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 21407 microseconds.
-Saved artifact at '/tmp/tmpbmypjdw9'. The following endpoints are available:
+  140685550405968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550405008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550404816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550405584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550411152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550411920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+W0000 00:00:1785912636.914094   24449 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1785912636.914106   24449 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1785912636.914195   24449 reader.cc:83] Reading SavedModel from: /tmp/tmpzcsuf8nu
+I0000 00:00:1785912636.914469   24449 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1785912636.914475   24449 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpzcsuf8nu
+I0000 00:00:1785912636.916746   24449 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1785912636.931127   24449 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpzcsuf8nu
+I0000 00:00:1785912636.935435   24449 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 21243 microseconds.
+Saved artifact at '/tmp/tmpq5terah5'. The following endpoints are available:
 
 * Endpoint 'serve'
   args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 9), dtype=tf.float32, name='keras_tensor_7')
 Output Type:
   TensorSpec(shape=(None, 5), dtype=tf.float32, name=None)
 Captures:
-  139823534260880: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534261456: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534261648: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534260304: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534267984: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  139823534268752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550405968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550405008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550404816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550405584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550411152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550411920: TensorSpec(shape=(), dtype=tf.resource, name=None)
 /home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
   warnings.warn(
-W0000 00:00:1785909744.592655   17424 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
-W0000 00:00:1785909744.592665   17424 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
-I0000 00:00:1785909744.592754   17424 reader.cc:83] Reading SavedModel from: /tmp/tmpbmypjdw9
-I0000 00:00:1785909744.592977   17424 reader.cc:52] Reading meta graph with tags { serve }
-I0000 00:00:1785909744.592982   17424 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpbmypjdw9
-I0000 00:00:1785909744.594971   17424 loader.cc:236] Restoring SavedModel bundle.
-I0000 00:00:1785909744.608984   17424 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpbmypjdw9
-I0000 00:00:1785909744.613158   17424 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 20408 microseconds.
+W0000 00:00:1785912637.090952   24449 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1785912637.090962   24449 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1785912637.091050   24449 reader.cc:83] Reading SavedModel from: /tmp/tmpq5terah5
+I0000 00:00:1785912637.091260   24449 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1785912637.091265   24449 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpq5terah5
+I0000 00:00:1785912637.093522   24449 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1785912637.107720   24449 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpq5terah5
+I0000 00:00:1785912637.112023   24449 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 20977 microseconds.
 fully_quantize: 0, inference_type: 6, input_inference_type: FLOAT32, output_inference_type: FLOAT32
-W0000 00:00:1785909744.647544   17424 flatbuffer_export.cc:3851] Skipping runtime version metadata in the model. This will be generated by the exporter.
+W0000 00:00:1785912637.147105   24449 flatbuffer_export.cc:3851] Skipping runtime version metadata in the model. This will be generated by the exporter.
     Exported: FP32=8176B, INT8=6064B
 /home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
     TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
@@ -264,44 +263,94 @@ W0000 00:00:1785909744.647544   17424 flatbuffer_export.cc:3851] Skipping runtim
     for details.
 
   warnings.warn(_INTERPRETER_DELETION_WARNING)
-/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
-  return _methods._mean(a, axis=axis, dtype=dtype,
-/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
-  ret = ret.dtype.type(ret / rcount)
-/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/_core/_methods.py:219: RuntimeWarning: Degrees of freedom <= 0 for slice
-  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/_core/_methods.py:178: RuntimeWarning: invalid value encountered in divide
-  arrmean = um.true_divide(arrmean, div, out=arrmean,
-/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/_core/_methods.py:211: RuntimeWarning: invalid value encountered in scalar divide
-  ret = ret.dtype.type(ret / rcount)
-Traceback (most recent call last):
-  File "/mnt/Stuff/marl_sec/run_pipeline.py", line 189, in <module>
-    run_pipeline()
-  File "/mnt/Stuff/marl_sec/run_pipeline.py", line 145, in run_pipeline
-    reports = _export_and_analyze(actor, GRID_NAV_CONFIG, name)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/Stuff/marl_sec/run_pipeline.py", line 55, in _export_and_analyze
-    report = generate_report(dataset, label=label)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/Stuff/marl_sec/analysis/leakage_report.py", line 12, in generate_report
-    mi_boot = compute_mi_bootstrap(dataset, n_bootstrap=50)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/Stuff/marl_sec/analysis/mutual_info.py", line 70, in compute_mi_bootstrap
-    "ci_low": float(np.percentile(mi_arr, 2.5)),
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 4246, in percentile
-    return _quantile_unchecked(
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 4510, in _quantile_unchecked
-    return _ureduce(a,
-           ^^^^^^^^^^^
-  File "/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 3880, in _ureduce
-    r = func(a, **kwargs)
-        ^^^^^^^^^^^^^^^^^
-  File "/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 4669, in _quantile_ureduce_func
-    result = _quantile(arr,
-             ^^^^^^^^^^^^^^
-  File "/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py", line 4793, in _quantile
-    slices_having_nans = np.isnan(arr[-1, ...])
-                                  ~~~^^^^^^^^^
-IndexError: index -1 is out of bounds for axis 0 with size 0
+    fp32: MI=0.000 bits, RF_acc=1.000
+/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+    int8: MI=0.000 bits, RF_acc=1.000
+
+  Analyzing grid_nav_agent_1...
+/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/keras/src/layers/core/dense.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+Saved artifact at '/tmp/tmp5k_ncmi1'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 9), dtype=tf.float32, name='keras_tensor_14')
+Output Type:
+  TensorSpec(shape=(None, 5), dtype=tf.float32, name=None)
+Captures:
+  140685550414800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550416528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550413456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550414416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550419792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550417296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+W0000 00:00:1785912638.180629   24449 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1785912638.180641   24449 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1785912638.180726   24449 reader.cc:83] Reading SavedModel from: /tmp/tmp5k_ncmi1
+I0000 00:00:1785912638.180985   24449 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1785912638.180990   24449 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmp5k_ncmi1
+I0000 00:00:1785912638.183228   24449 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1785912638.197694   24449 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmp5k_ncmi1
+I0000 00:00:1785912638.202015   24449 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 21293 microseconds.
+Saved artifact at '/tmp/tmpxdhznksc'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 9), dtype=tf.float32, name='keras_tensor_14')
+Output Type:
+  TensorSpec(shape=(None, 5), dtype=tf.float32, name=None)
+Captures:
+  140685550414800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550416528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550413456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550414416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550419792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  140685550417296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1785912638.355577   24449 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1785912638.355588   24449 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1785912638.355676   24449 reader.cc:83] Reading SavedModel from: /tmp/tmpxdhznksc
+I0000 00:00:1785912638.355916   24449 reader.cc:52] Reading meta graph with tags { serve }
+I0000 00:00:1785912638.355921   24449 reader.cc:147] Reading SavedModel debug info (if present) from: /tmp/tmpxdhznksc
+I0000 00:00:1785912638.358025   24449 loader.cc:236] Restoring SavedModel bundle.
+I0000 00:00:1785912638.372285   24449 loader.cc:220] Running initialization op on SavedModel bundle at path: /tmp/tmpxdhznksc
+I0000 00:00:1785912638.376703   24449 loader.cc:471] SavedModel load for tags { serve }; Status: success: OK. Took 21031 microseconds.
+fully_quantize: 0, inference_type: 6, input_inference_type: FLOAT32, output_inference_type: FLOAT32
+W0000 00:00:1785912638.411646   24449 flatbuffer_export.cc:3851] Skipping runtime version metadata in the model. This will be generated by the exporter.
+    Exported: FP32=8176B, INT8=6064B
+/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+    fp32: MI=0.000 bits, RF_acc=1.000
+/home/mushahid/miniconda3/envs/marl-sec-env/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+    int8: MI=0.000 bits, RF_acc=1.000
+
+============================================================
+  SUMMARY
+============================================================
+
+Label                     MI(bits)   MI CI                KW p-val     RF Acc     MLP Acc    Random     Max Cohen d
+--------------------------------------------------------------------------------------------------------------------
+cartpole_fp32             0.0018     [0.090, 0.153]   1.11e-03     0.985      0.698      0.500      0.1630
+cartpole_int8             0.0000     [0.086, 0.151]   2.74e-03     0.990      0.700      0.500      0.1486
+grid_nav_agent_0_fp32     0.0000     [0.000, 0.000]   1.00e+00     1.000      1.000      0.200      0.0000
+grid_nav_agent_0_int8     0.0000     [0.000, 0.000]   1.00e+00     1.000      1.000      0.200      0.0000
+grid_nav_agent_1_fp32     0.0000     [0.000, 0.000]   1.00e+00     1.000      1.000      0.200      0.0000
+grid_nav_agent_1_int8     0.0000     [0.000, 0.000]   1.00e+00     1.000      1.000      0.200      0.0000
+
+Figures: /mnt/Stuff/marl_sec/figures/
+Datasets: /mnt/Stuff/marl_sec/data/
+Models: /mnt/Stuff/marl_sec/models/
+Checkpoints: /mnt/Stuff/marl_sec/checkpoints/
