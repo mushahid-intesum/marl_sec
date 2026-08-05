@@ -9,6 +9,7 @@ GAP_COL = 2
 STEP_PENALTY = -0.1
 COLLISION_PENALTY = -0.5
 GOAL_REWARD = 10.0
+DISTANCE_REWARD_SCALE = 0.5
 
 ACTION_DELTAS = {
     0: (0, 0),
@@ -43,6 +44,7 @@ class CooperativeGridNav:
         }
         self._positions: Dict[str, Tuple[int, int]] = {}
         self._last_actions: Dict[str, int] = {}
+        self._prev_distances: Dict[str, int] = {}
         self._step_count: int = 0
         self._done: bool = False
 
@@ -55,9 +57,15 @@ class CooperativeGridNav:
                 walls.add((mid, c))
         return walls
 
+    def _manhattan(self, agent: str) -> int:
+        r, c = self._positions[agent]
+        gr, gc = self.goals[agent]
+        return abs(r - gr) + abs(c - gc)
+
     def reset(self, seed: Optional[int] = None) -> Tuple[Dict[str, np.ndarray], Dict]:
         self._positions = {a: self.starts[a] for a in self.agents}
         self._last_actions = {a: 0 for a in self.agents}
+        self._prev_distances = {a: self._manhattan(a) for a in self.agents}
         self._step_count = 0
         self._done = False
         obs = {a: self._get_obs(a) for a in self.agents}
@@ -151,16 +159,22 @@ class CooperativeGridNav:
         )
         timed_out = self._step_count >= self.max_steps
 
-        reward = STEP_PENALTY
-        if had_collision:
-            reward += COLLISION_PENALTY
-        if both_at_goal:
-            reward += GOAL_REWARD
+        rewards = {}
+        for agent in self.agents:
+            r = STEP_PENALTY
+            if had_collision:
+                r += COLLISION_PENALTY
+            if both_at_goal:
+                r += GOAL_REWARD
+            curr_dist = self._manhattan(agent)
+            prev_dist = self._prev_distances[agent]
+            r += DISTANCE_REWARD_SCALE * (prev_dist - curr_dist)
+            self._prev_distances[agent] = curr_dist
+            rewards[agent] = r
 
         self._done = both_at_goal or timed_out
 
         obs = {a: self._get_obs(a) for a in self.agents}
-        rewards = {a: reward for a in self.agents}
         terminated = {a: both_at_goal for a in self.agents}
         truncated = {a: timed_out and not both_at_goal for a in self.agents}
         infos = {a: {} for a in self.agents}

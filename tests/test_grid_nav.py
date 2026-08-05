@@ -135,6 +135,7 @@ class TestCollisions:
         env.reset()
         env._positions["agent_0"] = (0, 1)
         env._positions["agent_1"] = (0, 3)
+        env._prev_distances = {a: env._manhattan(a) for a in env.agents}
         actions = {"agent_0": 4, "agent_1": 3}
         _, rewards, _, _, _ = env.step(actions)
         assert rewards["agent_0"] < -0.1
