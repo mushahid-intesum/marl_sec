@@ -142,10 +142,13 @@ def export_model(pytorch_model: nn.Module, config: EnvConfig,
 def verify_export(pytorch_model: nn.Module, tflite_path: str,
                   config: EnvConfig, n_samples: int = 100,
                   atol: float = 1e-5) -> dict:
-    import tensorflow as tf
-
     pytorch_model.eval()
-    interpreter = tf.lite.Interpreter(model_path=tflite_path)
+    try:
+        from ai_edge_litert import interpreter as litert
+        interpreter = litert.Interpreter(model_path=tflite_path)
+    except ImportError:
+        import tensorflow as tf
+        interpreter = tf.lite.Interpreter(model_path=tflite_path)
     interpreter.allocate_tensors()
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()

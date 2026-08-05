@@ -32,6 +32,25 @@ def train_timing_classifier(dataset: TimingDataset,
     X = _prepare_features(dataset, use_per_op)
     y = np.array(dataset.actions)
 
+    n_classes = dataset.act_dim
+    random_baseline = 1.0 / n_classes
+
+    if len(np.unique(y)) < 2:
+        return {
+            "model": None,
+            "model_type": model_type,
+            "accuracy": 1.0,
+            "f1_macro": 0.0,
+            "f1_weighted": 0.0,
+            "confusion_matrix": np.array([[len(y)]]),
+            "random_baseline": random_baseline,
+            "n_train": 0,
+            "n_test": 0,
+            "n_features": X.shape[1],
+            "y_test": y,
+            "y_pred": y,
+        }
+
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=TEST_SIZE, random_state=seed, stratify=y
     )
@@ -52,8 +71,6 @@ def train_timing_classifier(dataset: TimingDataset,
     clf.fit(X_train, y_train)
     y_pred = clf.predict(X_test)
 
-    n_classes = dataset.act_dim
-    random_baseline = 1.0 / n_classes
 
     return {
         "model": clf,

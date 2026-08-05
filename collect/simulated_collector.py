@@ -12,8 +12,12 @@ ACTION_BIAS = 200
 class SimulatedCollector:
 
     def __init__(self, tflite_path: str, config: EnvConfig):
-        import tensorflow as tf
-        self.interpreter = tf.lite.Interpreter(model_path=tflite_path)
+        try:
+            from ai_edge_litert import interpreter as litert
+            self.interpreter = litert.Interpreter(model_path=tflite_path)
+        except ImportError:
+            import tensorflow as tf
+            self.interpreter = tf.lite.Interpreter(model_path=tflite_path)
         self.interpreter.allocate_tensors()
         self.input_details = self.interpreter.get_input_details()
         self.output_details = self.interpreter.get_output_details()

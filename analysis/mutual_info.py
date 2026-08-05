@@ -13,6 +13,13 @@ def compute_mi_total(dataset: TimingDataset,
     timing = arrays["total_cycles"].astype(np.float64).reshape(-1, 1)
     actions = arrays["actions"]
 
+    if len(np.unique(actions)) < 2:
+        return {
+            "mi_bits": 0.0,
+            "mi_nats": 0.0,
+            "max_possible_bits": float(np.log2(max(dataset.act_dim, 1))),
+        }
+
     mi = mutual_info_classif(timing, actions, discrete_features=False,
                              n_neighbors=n_neighbors, random_state=42)
     return {
@@ -27,6 +34,9 @@ def compute_mi_per_op(dataset: TimingDataset,
     arrays = dataset.to_arrays()
     actions = arrays["actions"]
     per_op = arrays["per_op_cycles"].astype(np.float64)
+
+    if len(np.unique(actions)) < 2:
+        return {i: 0.0 for i in range(per_op.shape[1])}
 
     n_ops = per_op.shape[1]
     result = {}
@@ -52,6 +62,15 @@ def compute_mi_bootstrap(dataset: TimingDataset,
     actions = arrays["actions"]
     n = len(actions)
 
+    if len(np.unique(actions)) < 2:
+        return {
+            "mi_mean": 0.0,
+            "mi_std": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_bootstrap": 0,
+        }
+
     mi_samples = []
     for _ in range(n_bootstrap):
         idx = rng.choice(n, size=n, replace=True)
@@ -63,6 +82,15 @@ def compute_mi_bootstrap(dataset: TimingDataset,
                                  n_neighbors=n_neighbors, random_state=42)
         mi_samples.append(float(mi[0]) / np.log(2))
 
+    if len(mi_samples) == 0:
+        return {
+            "mi_mean": 0.0,
+            "mi_std": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_bootstrap": 0,
+        }
+
     mi_arr = np.array(mi_samples)
     return {
         "mi_mean": float(np.mean(mi_arr)),
@@ -71,3 +99,4 @@ def compute_mi_bootstrap(dataset: TimingDataset,
         "ci_high": float(np.percentile(mi_arr, 97.5)),
         "n_bootstrap": len(mi_samples),
     }
+
