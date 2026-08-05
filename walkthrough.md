@@ -35,44 +35,44 @@ marl_sec/
 
 | File | Purpose |
 |---|---|
-| [configs.py](file:///home/mushahidintesum/Music/marl_sec/envs/configs.py) | Dataclass configs: obs_dim, act_dim, bounds for all 3 envs |
-| [grid_nav.py](file:///home/mushahidintesum/Music/marl_sec/envs/grid_nav.py) | 2-agent cooperative grid navigation with comm channel |
-| [wrappers.py](file:///home/mushahidintesum/Music/marl_sec/envs/wrappers.py) | CartPole + MPE Simple Spread with normalization |
-| [to_tflite.py](file:///home/mushahidintesum/Music/marl_sec/export/to_tflite.py) | PyTorch MLP → Keras → TFLite (FP32/INT8) + C header |
+| [configs.py](marl_sec/envs/configs.py) | Dataclass configs: obs_dim, act_dim, bounds for all 3 envs |
+| [grid_nav.py](marl_sec/envs/grid_nav.py) | 2-agent cooperative grid navigation with comm channel |
+| [wrappers.py](marl_sec/envs/wrappers.py) | CartPole + MPE Simple Spread with normalization |
+| [to_tflite.py](marl_sec/export/to_tflite.py) | PyTorch MLP → Keras → TFLite (FP32/INT8) + C header |
 
 ### Phase 2: Analysis Pipeline (56 tests)
 
 | File | Purpose |
 |---|---|
-| [dataset.py](file:///home/mushahidintesum/Music/marl_sec/collect/dataset.py) | TimingDataset: store/load/group timing traces |
-| [sampler.py](file:///home/mushahidintesum/Music/marl_sec/collect/sampler.py) | Uniform, on-policy, adversarial observation generation |
-| [mutual_info.py](file:///home/mushahidintesum/Music/marl_sec/analysis/mutual_info.py) | MI(timing; action) with bootstrap CIs |
-| [correlation.py](file:///home/mushahidintesum/Music/marl_sec/analysis/correlation.py) | Kruskal-Wallis, ANOVA, Spearman, Cohen's d |
-| [classifier.py](file:///home/mushahidintesum/Music/marl_sec/analysis/classifier.py) | Random Forest + MLP timing→action classifiers |
-| [leakage_report.py](file:///home/mushahidintesum/Music/marl_sec/analysis/leakage_report.py) | Aggregate all metrics into summary table |
-| [plots.py](file:///home/mushahidintesum/Music/marl_sec/analysis/plots.py) | Violin plots, MI heatmaps, confusion matrices |
+| [dataset.py](marl_sec/collect/dataset.py) | TimingDataset: store/load/group timing traces |
+| [sampler.py](marl_sec/collect/sampler.py) | Uniform, on-policy, adversarial observation generation |
+| [mutual_info.py](marl_sec/analysis/mutual_info.py) | MI(timing; action) with bootstrap CIs |
+| [correlation.py](marl_sec/analysis/correlation.py) | Kruskal-Wallis, ANOVA, Spearman, Cohen's d |
+| [classifier.py](marl_sec/analysis/classifier.py) | Random Forest + MLP timing→action classifiers |
+| [leakage_report.py](marl_sec/analysis/leakage_report.py) | Aggregate all metrics into summary table |
+| [plots.py](marl_sec/analysis/plots.py) | Violin plots, MI heatmaps, confusion matrices |
 
 ### Phase 3: ESP32-S3 Firmware (12 files)
 
 | File | Purpose |
 |---|---|
-| [timing.c](file:///home/mushahidintesum/Music/marl_sec/firmware/main/timing.c) | CPU cycle counter at 240MHz |
-| [protocol.c](file:///home/mushahidintesum/Music/marl_sec/firmware/main/protocol.c) | UART binary protocol @ 921600 baud |
-| [inference.cc](file:///home/mushahidintesum/Music/marl_sec/firmware/main/inference.cc) | TFLite Micro + MicroProfiler per-op timing |
-| [main.c](file:///home/mushahidintesum/Music/marl_sec/firmware/main/main.c) | Entry point: receive obs → infer → send timing |
+| [timing.c](marl_sec/firmware/main/timing.c) | CPU cycle counter at 240MHz |
+| [protocol.c](marl_sec/firmware/main/protocol.c) | UART binary protocol @ 921600 baud |
+| [inference.cc](marl_sec/firmware/main/inference.cc) | TFLite Micro + MicroProfiler per-op timing |
+| [main.c](marl_sec/firmware/main/main.c) | Entry point: receive obs → infer → send timing |
 
 ### Phase 4: Serial Bridge (17 tests)
 
 | File | Purpose |
 |---|---|
-| [serial_bridge.py](file:///home/mushahidintesum/Music/marl_sec/collect/serial_bridge.py) | UART communication + protocol encode/decode |
+| [serial_bridge.py](marl_sec/collect/serial_bridge.py) | UART communication + protocol encode/decode |
 
 ### Phase 5: Integration
 
 | File | Purpose |
 |---|---|
-| [simulated_collector.py](file:///home/mushahidintesum/Music/marl_sec/collect/simulated_collector.py) | Software-simulated ESP32 timing for pipeline validation |
-| [integration_test.py](file:///home/mushahidintesum/Music/marl_sec/integration_test.py) | End-to-end smoke test: build → export → collect → analyze |
+| [simulated_collector.py](marl_sec/collect/simulated_collector.py) | Software-simulated ESP32 timing for pipeline validation |
+| [integration_test.py](marl_sec/integration_test.py) | End-to-end smoke test: build → export → collect → analyze |
 
 ---
 
